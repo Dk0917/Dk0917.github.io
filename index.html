@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>/* Stylesheet 1: */
+body {
+    font: 100% Lucida Sans, Verdana;
+    margin: 20px;
+    line-height: 26px;
+}
+
+.container {
+    min-width: 900px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: auto;
+}
+
+#top, #sidebar, #bottom, .menuitem {
+    border-radius: 4px;
+    margin: 4px;
+}
+
+#top {
+    background-color: #04AA6D;
+    color: #ffffff;
+    padding: 15px;
+}
+
+#menubar {
+    width: 200px;
+    float: left
+}
+
+#main {
+    padding: 10px;
+    margin: 0 200px 0 210px; 
+}
+
+
+
+#bottom {
+    border: 1px solid #d4d4d4;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    line-height: 14px;
+}
+
+#top h1, #top p, #menulist {
+    margin: 0;
+    padding: 0;
+}
+
+.menuitem {
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    list-style-type: none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.menuitem:hover {
+    background-color: #ffffff;
+}
+
+.menuitem {
+   background-color:#1cbd82;
+   color: white;
+   font-weight:bold;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #67666e9a;
+}
+
+
+@media (max-width: 800px) {
+    #sidebar {
+        width: auto;
+        position: relative;
+    } 
+    #main {
+        margin-right: 0;
+    }    
+       
+}
+
+@media (max-width: 600px) {
+    #menubar {
+        width: auto;
+        float: none;
+    }
+    #main {
+        margin: 0;
+    }    
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            
+            <div id="top">
+                <h1>My HomePage</h1>
+                <p>여러 과제들을 살펴보세요.</p>
+            </div>
+
+            <div id="menubar">
+                <ul id="menulist"></ul>
+                    <li class="menuitem">
+                        <p><a href="C:\Users\emrwl\web\homeworks\homework2\homework2-1.html">homework2-1</a></p>
+                    </li>
+                    <li class="menuitem">
+                        <p><a hreg="C:\Users\emrwl\web\homeworks\homework2\homework2-1.html">homework2-2</a></p>
+                    </li>
+                    <li class="menuitem">
+                        <p><a hreg="C:\Users\emrwl\web\homeworks\homework2\homework2-1.html">homework2-3</a></p>
+                    </li>
+                    <li class="menuitem">
+                        <p><a hreg="C:\Users\emrwl\web\homeworks\homework2\homework2-1.html">homework2-4</a></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="main">
+
+                <p>메뉴바를 누르거나 아래 링크를 눌러 과제를 확인하세요</p>
+                <p><a hreg="C:\Users\emrwl\web\homeworks\homework2\homework2-1.html">homework2-1</a> : 자기소개</p>
+                <p><a href="C:\Users\emrwl\web\homeworks\homework2\homework2-2.html">homework2-2</a> : 동서대 학부와 학과를 정리한 테이블 </p>
+                <p><a href="C:\Users\emrwl\web\homeworks\homework2\homework2-3.html">homework2-3</a> : 간단한 페러그래프</p>
+                <p><a href="C:\Users\emrwl\web\homeworks\homework2\homework2-4.html">homework2-4</a> : 사진첨부와 프레임을 나눈 페러그래프 </p>
+                
+            </div>
+          
+        </div>
+        <div id="bottom">
+            <p>이곳은 하단 바입니다.</p>
+        </div>
+    </div>
+</body>
+</html>
