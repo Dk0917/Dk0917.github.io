@@ -1,0 +1,283 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>amusementpark</title>
+    <style>
+
+        input[name = "submit"] {
+            float : right;
+        }
+        .input-wrap {
+            width: 960px;
+            margin: 0 auto;
+        }
+        h1 { text-align: center; }
+        th, td { 
+            padding: 5px;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse; 
+
+        }
+        table {
+            
+            border: 1px solid black;
+            border-collapse: collapse; 
+            margin: 0 auto;
+        }
+        a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="input-wrap">
+        <form action="classscore.php" method="POST">
+            <div style = "padding:15px" > 
+                <label for ="namee" style = "margin-left:180">고객성명</label>
+                <input type = "text" name = "namee" placeholder = "이름을 입력하세요" style = "margin-left:10"/>
+                <input type = "submit" name = "submit" value = "합계" style = "margin-right:180px"/>
+
+            </div>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>구분</th>
+                        <th style="width:150" colspan = "2">어린이</th>
+                        <th style="width:150" colspan = "2">어른</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>입장권</td>
+                        <td>7000</td>
+                        <td>
+                            <select name="childenterence">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option>  
+                            </select>   
+                        </td>
+                        <td>10000</td>
+                        <td>
+                            <select name="adultenterece">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option>  
+                            </select>   
+                        </td>
+                        <td>입장</td> 
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>BIC3</td>
+                        <td>12000</td>
+                        <td>
+                        <select name="childBIC3">
+                        <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option>  
+                            </select>   
+
+                        </td>                   
+                        <td>16000</td>
+                        <td>
+                            <select name="adultBIC3">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option> 
+                            </select>   
+                        </td>                   
+                        <td>입장+놀이3종</td>                   
+                        
+                    </tr>
+                    <tr>
+                        <td>3</td>   
+                        <td>자유이용권</td>   
+                        <td>21000</td>
+                        <td>
+                            <select name="childFreeTicket">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option> 
+                            </select>  
+                        </td>                   
+                        <td>26000</td>
+                        <td>  
+                            <select name="adultFreeTicket">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option> 
+                            </select>    
+                        </td>                   
+                        <td>입장+놀이자유</td>                   
+
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>연간이용권</td>   
+                        <td>70000</td>
+                        <td>
+                            <select name="childyearFreeTicket">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option> 
+                            </select>   
+                               
+                        </td>                   
+                        <td>90000</td>
+                        <td>  
+                            <select name="adultyearFreeTicket">
+                            <option value= "0" >0</option>
+                            <option value= "1">1</option>
+                            <option value= "2">2</option>
+                            <option value= "3">3</option> 
+                            </select>                     
+                        </td> 
+                        <td>입장+놀이자유</td>                   
+                    </tr>
+                </tbody>
+            </table>
+            <?php
+
+                $sum = 0;
+                $total = 0;
+
+                if (isset($_POST['namee']))
+                    echo date("h:i:sa");
+
+                if (isset($_POST['namee']) ) {
+                    $name = $_POST['namee'];           
+                    echo "<br>$name 고객님 감사합니다.<br>";
+                }
+            // 입장권
+                if (isset($_POST['childenterence'] ))  {
+                    $ce = $_POST['childenterence']; 
+                    if ($ce > 0)    
+                        echo "어린이 입장권 $ce 매 <br>";
+                        $sum += 7000 * $ce;
+                        $total += $ce;
+                }            
+                else {
+                    $ce = isset($_POST['childenterence']); 
+                }
+
+                if (isset($_POST['adultenterece'] ))  {
+                    $ae = $_POST['adultenterece']; 
+                    if ($ae > 0)   
+                        echo "어른 입장권 $ae 매<br>";
+                        $sum += 10000 * $ae;
+                        $total += $ae;
+
+                }
+                else {
+                    $ae = isset($_POST['adultenterece']); 
+                }
+
+            // BIC3
+                if (isset($_POST['childBIC3'] ))  {
+                    $cB = $_POST['childBIC3']; 
+                    if ($cB > 0)   
+                        echo "어린이 BIC3 $cB 매<br>";
+                        $sum += 12000 * $cB;
+                        $total += $cB;
+
+                }
+                else {
+                    $cB = isset($_POST['childBIC3']); 
+                }
+
+                if (isset($_POST['adultBIC3'] ))  {
+                    $aB = $_POST['adultBIC3']; 
+                    if ($aB > 0) 
+                        echo "어른 BIC3 $aB 매<br>";
+                        $sum += 16000 * $aB;
+                        $total += $aB;
+
+                }
+                else {
+                    $aB = isset($_POST['adultBIC3']); 
+                }
+
+            // 자유이용권
+                if (isset($_POST['childFreeTicket'] ))  {
+                    $cf = $_POST['childFreeTicket']; 
+                    if ($cf > 0)    
+                        echo "어린이 자유이용권 $cf 매<br>";
+                        $sum += 21000 * $cf;
+                        $total += $cf;
+
+                }
+                else {
+                    $cf = isset($_POST['childFreeTicket']); 
+                }
+
+                if (isset($_POST['adultFreeTicket'] ))  {
+                    $af = $_POST['adultFreeTicket']; 
+                    if ($af > 0)    
+                        echo "어른 자유이용권 $af 매<br>";
+                        $sum += 26000 * $af;
+                        $total += $af;
+
+                }
+                else {
+                    $af = isset($_POST['adultFreeTicket']); 
+                }
+
+            // 연간이용권
+                if (isset($_POST['childyearFreeTicket'] ))  {
+                    $cy = $_POST['childyearFreeTicket']; 
+                    if ($cy > 0)                       
+                        echo "어린이 연간이용권 $cy 매<br>" ;
+                        $sum += 70000 * $cy;
+                        $total += $cy;
+
+                } 
+                else {
+                    $cy = isset($_POST['childyearFreeTicket']); 
+                }
+
+                if (isset($_POST['adultyearFreeTicket   '] ))  {
+                    $ay = $_POST['adultyearFreeTicket']; 
+                    if ($ay > 0)    
+                        echo "어른 연간이용권 $ay 매<br>";
+                        $sum += 90000 * $ay;
+                        $total += $ay;
+
+                }
+                else {
+                    $ay = isset($_POST['adultyearFreeTicket']); 
+                }
+
+            // 합계
+                if ($sum)
+                echo "합계 $sum 원 입니다."  ;
+        
+            //삽입
+            $conn = mysqli_connect("localhost","root","","amusementpark");
+
+            if(isset($_POST['namee'])) {
+
+                $sql = "INSERT INTO  users (name, childenterence, adultenterece, childBIC3, adultBIC3, childFreeTicket, adultFreeTicket, childyearFreeTicket, adultyearFreeTicket, total) VALUES ('$name', '$ce',  '$ae', '$cB', '$aB', '$cf', '$af', '$cy' , '$ay' , '$total')";
+                $result = mysqli_query($conn,$sql);
+            } 
+
+            ?>
+       </form>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
