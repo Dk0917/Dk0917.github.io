@@ -6,3 +6,9 @@ Homework3-2 결과
 
 Homework3-3 결과
 ![3-3 result](https://github.com/Dk0917/Dk0917.github.io/assets/156882898/affb000e-acf1-4eac-a726-cefeaec7d949)
+
+Homework4 결과
+![homework4 결과](https://github.com/Dk0917/Dk0917.github.io/assets/156882898/dfef1350-12e7-45f7-8d89-e216adb9cd53)
+
+Homework4 db 결과
+![homework4 db결과 jpg](https://github.com/Dk0917/Dk0917.github.io/assets/156882898/6648de5e-33cc-408e-b451-5a066e639e78)
