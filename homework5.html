@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cafe menu</title>
+    <script type="text/javascript" src="C:\Users\emrwl\web\homeworks\homework5-j.js"></script>
+    <link href="C:\Users\emrwl\web\homeworks\homework5-c.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload='hideTotal()'>
+    <div id="wrap">
+        <form action="C:\Users\emrwl\web\homeworks\homework5-j.js" id="coffeeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>Choice menu</legend>
+                <label > 커피 & 에스프레소</label>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="amrcn"  />아메리카노 (4000)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="cflt"  />카페라떼 (5000)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="cpcn" />카푸치노 (5000)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="dclt"  />돌체라떼 (5500)</label><br/>
+                
+                <label > 티</label>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="mt"  />민트 티 (4000)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="gt"  />그린 티 (4500)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="at"  />얼 그레이 티 (4500)</label><br/>
+           
+                
+                <label > 블랜디드</label>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="mb" />밀크 티 블랜디드 (5000)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="mbb"  />망고 바나나 블랜디드 (5500)</label><br/>
+                <label class='checkboxlabel'><input type="checkbox"  name="selectedcoffee" value="dlb" />더블 레몬 블랜디드 (5500)</label><br/>
+              
+                <br/>
+                           
+                <p>
+                <label class="inlinelabel" for='includeinscription'>추가 주문 사항</label>
+                <input type="text"  id="theinscription" name="theinscription" />
+                </p>
+                
+                <div id="totalPrice"></div>
+
+                <input type="submit" value="제출" id="submitButton" onclick="calculateTotal()">
+                </fieldset>
+            </div>     	
+        </div>  
+       </form>
+	</div>
+
+</body>
+</html>
